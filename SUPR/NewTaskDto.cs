@@ -35,13 +35,13 @@ namespace UMP.Loodsman.Dtos.SUPR
 
         public DateTime PlanDateStart { get; set; }
 
-        public TimeSpan PlanDuration { get; set; }
+        public double PlanDuration { get; set; }
 
         public long PlanFinishRestriction { get; set; }
 
         public long PlanStartRestriction { get; set; }
 
-        public long Priority { get; set; }
+        public int Priority { get; set; }
 
         public long State { get; set; }
 
