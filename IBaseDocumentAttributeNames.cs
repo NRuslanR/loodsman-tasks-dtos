@@ -13,5 +13,9 @@ namespace UMP.Loodsman.Dtos
         string ReceiverDepartment { get; }
 
         string Title { get; }
+
+        string Note { get; }
+
+        string SheetCount { get; }
     }
 }

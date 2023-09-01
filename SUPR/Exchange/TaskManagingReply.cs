@@ -9,6 +9,11 @@ namespace UMP.Loodsman.Dtos.SUPR.Exchange
             return new TaskManagingReply { RequestId = requestId, Result = TaskManagingRequestProcessingResult.RequestUnprocessable };
         }
 
+        public static TaskManagingReply Success(object requestId) 
+        {
+            return new TaskManagingReply { RequestId = requestId, Result = TaskManagingRequestProcessingResult.Success };
+        }
+
         public object RequestId { get; set; }
 
         public TaskManagingRequestProcessingResult Result { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace UMP.Loodsman.Dtos
 {
@@ -9,9 +10,39 @@ namespace UMP.Loodsman.Dtos
         private IDictionary<string, AttributeValueDto> attributeValueDtos;
         private AttributeValues attributeValues;
 
-        public AttributeValueDtos()
+        public AttributeValueDtos(params Tuple<string, object>[] nameValuePairs) : this(nameValuePairs.AsEnumerable())
         {
-            attributeValueDtos = new Dictionary<string, AttributeValueDto>();
+
+        }
+
+        public AttributeValueDtos(IEnumerable<Tuple<string, object>> nameValuePairs) : 
+            this(nameValuePairs.Select(
+                pair => 
+                    new KeyValuePair<string, AttributeValueDto>(
+                        pair.Item1, 
+                        new AttributeValueDto { Name = pair.Item1, Value = pair.Item2}
+                        )
+                )
+            )
+        {
+            
+        }
+
+        public AttributeValueDtos(IEnumerable<KeyValuePair<string, AttributeValueDto>> source) : 
+            this(new Dictionary<string, AttributeValueDto>(
+                source.ToDictionary(pair => pair.Key, pair => pair.Value)))
+        {
+
+        }
+
+        public AttributeValueDtos() : this(new Dictionary<string, AttributeValueDto>())
+        {
+        }
+
+        private AttributeValueDtos(IDictionary<string, AttributeValueDto> attributeValueDtos)
+        {
+            this.attributeValueDtos = attributeValueDtos;
+
             attributeValues = new AttributeValues(attributeValueDtos);
         }
 
@@ -32,10 +63,7 @@ namespace UMP.Loodsman.Dtos
 
         public AttributeValueDto NewAttributeValue(string name, object value = null) => new AttributeValueDto
         {
-            Attribute = new AttributeDto
-            {
-                Name = name
-            },
+            Name = name,
             Value = value
         };
 

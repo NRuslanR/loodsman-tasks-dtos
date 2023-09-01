@@ -6,12 +6,27 @@ namespace UMP.Loodsman.Dtos
 {
     public class LinkDto
     {
-        public long Id { get; set; }
+        public LinkDto()
+        {
+            Type = new LinkTypeDto();
+        }
 
-        public string Name { get; set; }
+        public LinkTypeDto Type { get; set; }
 
-        public string InverseName { get; set; }
+        public long ParentVersionId { get; set; }
 
-        public int Type { get; set; }
+        public string ParentTypeName { get; set; }
+
+        public string ParentProductValue { get; set; }
+
+        public  string ParentVersion { get; set; }
+
+        public long ChildVersionId { get; set; }
+
+        public string ChildTypeName { get; set; }   
+
+        public string ChildProductValue { get; set; }
+
+        public string ChildVersion { get; set;}
     }
 }

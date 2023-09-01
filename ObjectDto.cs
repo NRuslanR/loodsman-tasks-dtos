@@ -7,7 +7,7 @@
             Type = new TypeDto();
         }
 
-        public long IdVersion { get; set; }
+        public long VersionId { get; set; }
 
         public string TypeName
         {

@@ -9,6 +9,11 @@ namespace UMP.Loodsman.Dtos
     {
         private ICollection<FileDto> fileDtos;
 
+        public FileDtos(IEnumerable<FileDto> source) 
+        {
+            fileDtos = new List<FileDto>(source);
+        }
+
         public FileDtos()
         {
             fileDtos = new List<FileDto>();

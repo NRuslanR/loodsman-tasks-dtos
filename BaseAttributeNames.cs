@@ -16,6 +16,10 @@ namespace UMP.Loodsman.Dtos
 
         string Title { get; }
 
+        string Note { get; }
+
+        string SheetCount { get; }
+
         IEnumerator<string> GetEnumerator(params string[] enumerableAttributeNames);
     }
 
@@ -41,5 +45,9 @@ namespace UMP.Loodsman.Dtos
         public abstract string ReceiverDepartment { get; }
 
         public abstract string Title { get; }
+
+        public abstract string Note { get; }
+
+        public abstract string SheetCount { get; }
     }
 }

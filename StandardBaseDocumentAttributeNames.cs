@@ -29,5 +29,9 @@ namespace UMP.Loodsman.Dtos
         public string ReceiverDepartment => baseAttributeNames.ReceiverDepartment;
 
         public string Title => baseAttributeNames.Title;
+
+        public string Note => baseAttributeNames.Note;
+
+        public string SheetCount => baseAttributeNames.SheetCount;
     }
 }

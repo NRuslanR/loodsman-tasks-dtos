@@ -9,10 +9,10 @@ namespace UMP.Loodsman.Dtos
             Object = new ObjectDto();
         }
 
-        public long IdVersion
+        public long VersionId
         {
-            get => Object.IdVersion;
-            set => Object.IdVersion = value;
+            get => Object.VersionId;
+            set => Object.VersionId = value;
         }
 
         public string TypeName
