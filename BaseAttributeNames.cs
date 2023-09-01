@@ -29,7 +29,7 @@ namespace UMP.Loodsman.Dtos
 
         public IEnumerator<string> GetEnumerator(params string[] enumerableAttributeNames)
         {
-            foreach (var attributeName in new string[] { Author, AuthorDepartment, ReceiverDepartment, Title })
+            foreach (var attributeName in new string[] { Author, AuthorDepartment, ReceiverDepartment, Title, Note, SheetCount })
             {
                 if (enumerableAttributeNames.Contains(attributeName))
                     yield return attributeName;

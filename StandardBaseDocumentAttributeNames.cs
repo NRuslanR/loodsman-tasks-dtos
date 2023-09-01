@@ -15,7 +15,7 @@ namespace UMP.Loodsman.Dtos
         }
 
         public IEnumerator<string> GetEnumerator() =>
-            baseAttributeNames.GetEnumerator(Author, AuthorDepartment, ReceiverDepartment, Title);
+            baseAttributeNames.GetEnumerator(Author, AuthorDepartment, ReceiverDepartment, Title, Note, SheetCount);
 
         IEnumerator IEnumerable.GetEnumerator()
         {
